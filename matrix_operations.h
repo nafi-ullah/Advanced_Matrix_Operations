@@ -18,8 +18,10 @@ std::vector<std::vector<double>> createRowReductionMatrix(int var);
 std::vector<double> rowReductionSolve(std::vector<std::vector<double>>& augmentedMatrix);
 void displayRowReductionSolve(const std::vector<double>& solution);
 
-std::vector<std::vector<double>> createMatrixForInverse(int var);
+std::vector<std::vector<double>> createMatrixForInverseOrDet(int var);
 std::vector<std::vector<double>> findMatrixInverse(std::vector<std::vector<double>>& matrix);
+
+double findMatrixDeterminant(std::vector<std::vector<double>>& matrix);
 
 void displayMatrix(const std::vector<std::vector<int>>& matrix) ;
 

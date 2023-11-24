@@ -67,7 +67,7 @@ std::vector<std::vector<double>> createRowReductionMatrix(int var) {
     return matrix;
 }
 
-std::vector<std::vector<double>> createMatrixForInverse(int var) {
+std::vector<std::vector<double>> createMatrixForInverseOrDet(int var) {
 
     int rows =  var;
     int cols = var;
@@ -336,6 +336,72 @@ std::vector<std::vector<double>> findMatrixInverse(std::vector<std::vector<doubl
     }
 
     return inverseMatrix;
+}
+
+double findMatrixDeterminant(std::vector<std::vector<double>>& matrix) {
+    int n = matrix.size();
+    double determinant = 1.0;
+
+    std::cout << "Initial Matrix:\n";
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+
+    // Perform Gaussian Elimination
+    for (int i = 0; i < n; ++i) {
+        // Find the pivot row
+        int pivotRow = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (std::abs(matrix[j][i]) > std::abs(matrix[pivotRow][i])) {
+                pivotRow = j;
+            }
+        }
+
+        // Swap the current row with the pivot row
+        std::swap(matrix[i], matrix[pivotRow]);
+
+        // Display intermediate steps
+        std::cout << "Intermediate Matrix (Step " << i + 1 << "):\n";
+        for (int j = 0; j < n; ++j) {
+            for (int k = 0; k < n; ++k) {
+                std::cout << matrix[j][k] << " ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+
+        // Make the diagonal element 1
+        double pivot = matrix[i][i];
+        determinant *= pivot; // Update the determinant
+        for (int j = i; j < n; ++j) {
+            matrix[i][j] /= pivot;
+        }
+
+        // Eliminate other rows
+        for (int j = i + 1; j < n; ++j) {
+            double factor = matrix[j][i];
+            for (int k = i; k < n; ++k) {
+                matrix[j][k] -= factor * matrix[i][k];
+            }
+        }
+    }
+
+    std::cout << "Final Upper Triangular Matrix:\n";
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+
+    std::cout << "Determinant: " << determinant << std::endl;
+
+    return determinant;
 }
 
 

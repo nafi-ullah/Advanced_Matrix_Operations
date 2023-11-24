@@ -34,11 +34,16 @@ int main() {
     displayRowReductionSolve(solution);
     */
 
+    /*
    std::vector<std::vector<double>> matrix1 = createMatrixForInverse(3);
 
     // Find the inverse matrix
     std::vector<std::vector<double>> inverseMatrix = findMatrixInverse(matrix1);
+  */
+   std::vector<std::vector<double>> matrix = createMatrixForInverseOrDet(3);
 
+    // Find the determinant
+    std::cout<< findMatrixDeterminant(matrix);
 
 
     return 0;
