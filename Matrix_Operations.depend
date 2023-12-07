@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1700808187 source:/media/noneed/1250C6B250C69BBB/Projectsss/Matrix/Matrix_Operations/matrix_operations.cpp
+1700808824 source:/media/noneed/1250C6B250C69BBB/Projectsss/Matrix/Matrix_Operations/matrix_operations.cpp
 	"matrix_operations.h"
 	<iostream>
 	<vector>
 
-1700808184 /media/noneed/1250C6B250C69BBB/Projectsss/Matrix/Matrix_Operations/matrix_operations.h
+1700808821 /media/noneed/1250C6B250C69BBB/Projectsss/Matrix/Matrix_Operations/matrix_operations.h
 	<vector>
 
-1700808628 source:/media/noneed/1250C6B250C69BBB/Projectsss/Matrix/Matrix_Operations/main.cpp
+1701936773 source:/media/noneed/1250C6B250C69BBB/Projectsss/Matrix/Matrix_Operations/main.cpp
 	<iostream>
 	"matrix_operations.h"
 
