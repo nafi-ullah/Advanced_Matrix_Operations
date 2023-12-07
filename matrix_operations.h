@@ -1,9 +1,12 @@
 
 // matrix_operations.h
+#include<bits/stdc++.h>
 
 #ifndef MATRIX_OPERATIONS_H
 #define MATRIX_OPERATIONS_H
 #include <vector>
+
+using namespace std;
 
 int add(int a, int b);
 int subtract(int a, int b);
